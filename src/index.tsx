@@ -8,18 +8,19 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-console.log("navigator", navigator);
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register(
-    "https://azufb.github.io/pwa_sample_practice/serviceWorker.js"
-  );
-}
-
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register(`/serviceWorker.js`)
+      .then((registration) => console.log("Success!"));
+  });
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
