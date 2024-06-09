@@ -1,4 +1,4 @@
-const cacheName = "pwa_sample_practice-v3";
+const cacheName = "pwa_sample_practice-v4";
 
 const appShellFiles = [
   "index.html",
